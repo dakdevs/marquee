@@ -15,7 +15,7 @@ export function createTray(): Tray {
   icon.setTemplateImage(true);
 
   tray = new Tray(icon);
-  tray.setToolTip("OBS Overlay Control");
+  tray.setToolTip("Marquee");
 
   const overlayUrl = `${getServerUrl()}/overlay`;
 

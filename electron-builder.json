@@ -1,6 +1,6 @@
 {
-  "appId": "com.dakdevs.obs-overlay-control",
-  "productName": "OBS Overlay Control",
+  "appId": "com.dakdevs.marquee",
+  "productName": "Marquee",
   "directories": {
     "output": "release"
   },

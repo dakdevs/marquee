@@ -1,5 +1,5 @@
 {
-  "name": "obs-overlay-control",
+  "name": "marquee",
   "main": "dist-electron/main.js",
   "module": "index.ts",
   "type": "module",

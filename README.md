@@ -1,4 +1,4 @@
-# OBS Overlay Control
+# Marquee
 
 A desktop app for managing streaming overlays in OBS. Create and control lower thirds, title cards, topic bars, tickers, and more — all from a drag-and-drop control panel that syncs live to your OBS Browser Source.
 
