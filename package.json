@@ -1,0 +1,39 @@
+{
+  "name": "obs-overlay-control",
+  "main": "dist-electron/main.js",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build:css": "bunx @tailwindcss/cli -i ./overlay.css -o ./overlay.built.css && bunx @tailwindcss/cli -i ./control/control.css -o ./control/control.built.css",
+    "dev:css": "bunx @tailwindcss/cli -i ./overlay.css -o ./overlay.built.css --watch & bunx @tailwindcss/cli -i ./control/control.css -o ./control/control.built.css --watch",
+    "dev": "bun run build:css && bun --hot server.ts",
+    "build:electron": "bun run tsc -p electron/tsconfig.json",
+    "dev:electron": "bun run build:electron && electron .",
+    "dist": "bun run build:electron && electron-builder",
+    "dist:mac": "bun run build:electron && electron-builder --mac",
+    "dist:linux": "bun run build:electron && electron-builder --linux",
+    "dist:win": "bun run build:electron && electron-builder --win"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "^1.0.0-rc.0",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.1.18"
+  }
+}

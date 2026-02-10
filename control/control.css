@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@source "..";
+
+@theme {
+  --font-mono: "Berkeley Mono", monospace;
+  --color-surface: #111113;
+  --color-elevated: #18181b;
+  --color-hover: #1e1e22;
+  --color-live-dim: #0a2e1a;
+  --color-warn-dim: #2e1a0a;
+  --color-danger-dim: #2e0a0a;
+  --color-primary-dim: #1a1a2e;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Base UI Select popup */
+.select-positioner {
+  z-index: 200;
+}
+
+.select-popup {
+  background: #111113;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  padding: 4px;
+  min-width: var(--anchor-width);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.select-item {
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 12px;
+  color: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.select-item:hover,
+.select-item[data-highlighted] {
+  background: #1e1e22;
+}
+
+.select-item[data-selected] {
+  color: #fff;
+}
+
+/* Base UI Switch */
+.toggle-switch[data-checked] {
+  background: #1a1a2e;
+  border-color: #3b3b6e;
+}
+
+.toggle-switch[data-checked] .toggle-thumb {
+  transform: translateX(14px);
+  background: #818cf8;
+}
+
+/* Base UI Dialog transitions */
+.modal-overlay {
+  transition: opacity 0.15s ease;
+}
+
+.modal-overlay[data-starting-style],
+.modal-overlay[data-ending-style] {
+  opacity: 0;
+}
+
+.modal[data-starting-style],
+.modal[data-ending-style] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+/* Preview frame scene overrides (always visible in preview) */
+.preview-frame .scene {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

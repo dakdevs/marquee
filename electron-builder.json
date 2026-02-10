@@ -1,0 +1,34 @@
+{
+  "appId": "com.dakdevs.obs-overlay-control",
+  "productName": "OBS Overlay Control",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist-electron/**/*",
+    "server.ts",
+    "overlay.*",
+    "control/**/*",
+    "types.ts",
+    "node_modules/**/*",
+    "electron/assets/**/*"
+  ],
+  "mac": {
+    "target": ["dmg"],
+    "icon": "electron/assets/icon.png",
+    "category": "public.app-category.utilities"
+  },
+  "linux": {
+    "target": ["AppImage"],
+    "icon": "electron/assets/icon.png",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["nsis"],
+    "icon": "electron/assets/icon.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}
